@@ -1,11 +1,10 @@
 package me.kyleclemens.advent.days
 
-import me.kyleclemens.advent.helpers.DataCarrying
-import me.kyleclemens.advent.helpers.ProducesAnswers
+import me.kyleclemens.advent.helpers.Solution
 import me.kyleclemens.advent.helpers.UsesData
 
 @UsesData(day = 2)
-class Day2 : DataCarrying, ProducesAnswers {
+class Day2 : Solution {
 
     private data class Dimensions(val length: Int, val width: Int, val height: Int)
 

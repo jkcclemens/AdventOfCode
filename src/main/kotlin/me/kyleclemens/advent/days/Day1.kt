@@ -1,11 +1,10 @@
 package me.kyleclemens.advent.days
 
-import me.kyleclemens.advent.helpers.DataCarrying
-import me.kyleclemens.advent.helpers.ProducesAnswers
+import me.kyleclemens.advent.helpers.Solution
 import me.kyleclemens.advent.helpers.UsesData
 
 @UsesData(day = 1)
-class Day1 : DataCarrying, ProducesAnswers {
+class Day1 : Solution {
 
     private fun produceFirstAnswer(): String {
         // Get the number of increments
