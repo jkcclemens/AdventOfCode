@@ -1,5 +1,5 @@
 package me.kyleclemens.advent.helpers
 
 interface ProducesAnswers {
-    fun produceAnswers(): Pair<String, String>
+    fun produceAnswers(): Pair<Any, Any>
 }

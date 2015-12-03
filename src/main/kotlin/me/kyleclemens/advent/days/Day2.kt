@@ -20,7 +20,7 @@ class Day2 : Solution {
         return this.getData().split("\n").filterNot { it.isEmpty() }.map { it.toDimensions() }
     }
 
-    private fun produceFirstAnswer(): String {
+    private fun produceFirstAnswer(): Int {
         return this.getDimensions().map { dimension ->
             // Do the necessary calculations
             val side1 = 2 * dimension.length * dimension.width
@@ -31,10 +31,10 @@ class Day2 : Solution {
             val smallest = listOf(side1, side2, side3).min()!! / 2
             // Add all the surface area and the slack
             return@map side1 + side2 + side3 + smallest
-        }.sum().toString() // sum the results
+        }.sum() // sum the results
     }
 
-    private fun produceSecondAnswer(): String {
+    private fun produceSecondAnswer(): Int {
         return this.getDimensions().map { dimension ->
             // Find the volume
             val volume = dimension.height * dimension.width * dimension.length
@@ -46,10 +46,10 @@ class Day2 : Solution {
             val smallest = listOf(side1 + side2, side1 + side3, side2 + side1, side2 + side3, side3 + side1, side3 + side2).min()!!
             // Add the volume and the smallest perimeter
             return@map volume + smallest
-        }.sum().toString()
+        }.sum()
     }
 
-    override fun produceAnswers(): Pair<String, String> {
+    override fun produceAnswers(): Pair<Int, Int> {
         return this.produceFirstAnswer() to this.produceSecondAnswer()
     }
 }

@@ -6,16 +6,16 @@ import me.kyleclemens.advent.helpers.UsesData
 @UsesData(day = 1)
 class Day1 : Solution {
 
-    private fun produceFirstAnswer(): String {
+    private fun produceFirstAnswer(): Int {
         // Get the number of increments
         val increments = this.getData().replace(")", "").length
         // Get the number of decrements
         val decrements = this.getData().replace("(", "").length
         // Subtracting the decrements from the increments will indicate the floor Santa has to go to.
-        return (increments - decrements).toString()
+        return increments - decrements
     }
 
-    private fun produceSecondAnswer(): String {
+    private fun produceSecondAnswer(): Int {
         // Start our count at 0
         var count = 0
         // Loop through every instruction in the data with its index
@@ -26,14 +26,14 @@ class Day1 : Solution {
             else if (c.value == ')') count--
             // If the count is -1 (the basement), return the current index plus one (starts at one)
             if (count == -1) {
-                return (c.index + 1).toString()
+                return c.index + 1
             }
         }
         // If the count never equals -1, the basement was never entered, indicating invalid data
         throw IllegalStateException("The basement is never entered")
     }
 
-    override fun produceAnswers(): Pair<String, String> {
+    override fun produceAnswers(): Pair<Int, Int> {
         return this.produceFirstAnswer() to this.produceSecondAnswer()
     }
 }
