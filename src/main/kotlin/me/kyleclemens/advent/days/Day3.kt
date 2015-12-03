@@ -8,14 +8,14 @@ open class Day3 : Solution {
 
     private class TwoDimensionalHouseGrid {
         /**
-         * A map of the houses, referenced by position in a "XxY" format, with keys being the number of presents
+         * A map of the houses, referenced by position in a "X,Y" format, with keys being the number of presents
          */
         val houses = hashMapOf<String, Int>()
         /**
          * The current coordinates in the correct format
          */
         val currentCoordinates: String
-            get() = "${currentX}x$currentY"
+            get() = "${currentX},$currentY"
         /**
          * Current X position
          */
