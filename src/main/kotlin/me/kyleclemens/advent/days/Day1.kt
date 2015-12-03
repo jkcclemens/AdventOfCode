@@ -4,7 +4,7 @@ import me.kyleclemens.advent.helpers.Solution
 import me.kyleclemens.advent.helpers.UsesData
 
 @UsesData(day = 1)
-class Day1 : Solution {
+open class Day1 : Solution {
 
     private fun produceFirstAnswer(): Int {
         // Get the number of increments
@@ -30,7 +30,7 @@ class Day1 : Solution {
             }
         }
         // If the count never equals -1, the basement was never entered, indicating invalid data
-        throw IllegalStateException("The basement is never entered")
+        return -1
     }
 
     override fun produceAnswers(): Pair<Int, Int> {

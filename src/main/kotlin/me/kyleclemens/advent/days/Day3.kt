@@ -4,7 +4,7 @@ import me.kyleclemens.advent.helpers.Solution
 import me.kyleclemens.advent.helpers.UsesData
 
 @UsesData(day = 3)
-class Day3 : Solution {
+open class Day3 : Solution {
 
     private class TwoDimensionalHouseGrid {
         /**
