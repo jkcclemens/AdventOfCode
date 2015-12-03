@@ -8,7 +8,7 @@ class Day2Spec : MavenSpek() {
         given("a Day 2 solution") {
             val solution = Day2()
             on("producing the answers") {
-                val answers = solution.produceAnswers()
+                val answers = solution.answers
                 it("should have the correct first answer") {
                     assertEquals(1588178, answers.first)
                 }
@@ -38,7 +38,7 @@ class Day2Spec : MavenSpek() {
     }
 
     private val String.answers: Pair<Int, Int>
-        get() = CustomDay2(this).produceAnswers()
+        get() = CustomDay2(this).answers
 
     private class CustomDay2(val customData: String) : Day2() {
         override fun getData(): String {

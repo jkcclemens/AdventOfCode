@@ -8,9 +8,9 @@ open class Day1 : Solution {
 
     private fun produceFirstAnswer(): Int {
         // Get the number of increments
-        val increments = this.getData().replace(")", "").length
+        val increments = this.getData().count { it == '(' }
         // Get the number of decrements
-        val decrements = this.getData().replace("(", "").length
+        val decrements = this.getData().count { it == ')' }
         // Subtracting the decrements from the increments will indicate the floor Santa has to go to.
         return increments - decrements
     }
@@ -33,7 +33,6 @@ open class Day1 : Solution {
         return -1
     }
 
-    override fun produceAnswers(): Pair<Int, Int> {
-        return this.produceFirstAnswer() to this.produceSecondAnswer()
-    }
+    override val answers: Pair<Int, Int>
+        get() = this.produceFirstAnswer() to this.produceSecondAnswer()
 }

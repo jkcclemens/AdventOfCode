@@ -49,7 +49,6 @@ open class Day2 : Solution {
         }.sum()
     }
 
-    override fun produceAnswers(): Pair<Int, Int> {
-        return this.produceFirstAnswer() to this.produceSecondAnswer()
-    }
+    override val answers: Pair<Int, Int>
+        get() = this.produceFirstAnswer() to this.produceSecondAnswer()
 }

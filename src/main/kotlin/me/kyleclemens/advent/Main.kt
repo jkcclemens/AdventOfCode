@@ -5,7 +5,7 @@ import me.kyleclemens.advent.days.Day2
 import me.kyleclemens.advent.days.Day3
 
 fun main(args: Array<String>) {
-    println("Day 1: ${Day1().produceAnswers()}")
-    println("Day 2: ${Day2().produceAnswers()}")
-    println("Day 3: ${Day3().produceAnswers()}")
+    println("Day 1: ${Day1().answers}")
+    println("Day 2: ${Day2().answers}")
+    println("Day 3: ${Day3().answers}")
 }

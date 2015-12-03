@@ -96,7 +96,6 @@ open class Day3 : Solution {
         return (santaGrid.houses + roboSantaGrid.houses).size
     }
 
-    override fun produceAnswers(): Pair<Int, Int> {
-        return this.produceFirstAnswer() to this.produceSecondAnswer()
-    }
+    override val answers: Pair<Int, Int>
+        get() = this.produceFirstAnswer() to this.produceSecondAnswer()
 }
