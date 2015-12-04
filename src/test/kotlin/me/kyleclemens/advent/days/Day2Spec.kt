@@ -41,9 +41,7 @@ class Day2Spec : MavenSpek() {
         get() = CustomDay2(this).answers
 
     private class CustomDay2(val customData: String) : Day2() {
-        override fun getData(): String {
-            return this.customData
-        }
+        override fun getData() = this.customData
     }
 
 }
