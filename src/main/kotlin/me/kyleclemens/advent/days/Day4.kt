@@ -13,7 +13,7 @@ open class Day4 : Solution {
      */
     private fun findNumberWithZeroes(num: Int): Int {
         // Make a string of zeroes equal to the length of num
-        val goal = "".padEnd(num, '0')
+        val goal = "0".repeat(num)
         // Get the key to append to
         val key = this.getData().replace(Regex("\r?\n"), "")
         // Start at -1
