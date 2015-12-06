@@ -47,7 +47,7 @@ class Day3Spec : MavenSpek() {
         get() = CustomDay3(this).answers
 
     private class CustomDay3(val customData: String) : Day3() {
-        override fun getData() = this.customData
+        override val data = this.customData
     }
 
 }

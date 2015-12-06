@@ -8,9 +8,9 @@ open class Day1 : Solution {
 
     private fun produceFirstAnswer(): Int {
         // Get the number of increments
-        val increments = this.getData().count { it == '(' }
+        val increments = this.data.count { it == '(' }
         // Get the number of decrements
-        val decrements = this.getData().count { it == ')' }
+        val decrements = this.data.count { it == ')' }
         // Subtracting the decrements from the increments will indicate the floor Santa has to go to.
         return increments - decrements
     }
@@ -19,7 +19,7 @@ open class Day1 : Solution {
         // Start our count at 0
         var count = 0
         // Loop through every instruction in the data with its index
-        for (c in this.getData().withIndex()) {
+        for (c in this.data.withIndex()) {
             // If it's an increment instruction, increment the count
             if (c.value == '(') count++
             // If it's a decrement instruction, decrement the count

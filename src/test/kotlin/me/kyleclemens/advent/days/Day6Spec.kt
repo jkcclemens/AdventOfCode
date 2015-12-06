@@ -3,44 +3,47 @@ package me.kyleclemens.advent.days
 import me.kyleclemens.advent.MavenSpek
 import kotlin.test.assertEquals
 
-class Day2Spec : MavenSpek() {
+class Day6Spec : MavenSpek() {
     override fun test() {
-        given("a Day 2 solution") {
-            val solution = Day2()
+        given("a Day 6 solution") {
+            val solution = Day6()
             on("producing the answers") {
                 val answers = solution.answers
                 it("should have the correct first answer") {
-                    assertEquals(1588178, answers.first)
+                    assertEquals(400410, answers.first)
                 }
                 it("should have the correct second answer") {
-                    assertEquals(3783758, answers.second)
+                    assertEquals(15343601, answers.second)
                 }
             }
         }
         given("examples") {
             on("testing part 1") {
                 it("should produce the correct answer") {
-                    assertEquals(58, "2x3x4".answers.first)
+                    assertEquals(1000000, "turn on 0,0 through 999,999".answers.first)
                 }
                 it("should produce the correct answer") {
-                    assertEquals(43, "1x1x10".answers.first)
+                    assertEquals(1000, "toggle 0,0 through 999,0".answers.first)
+                }
+                it("should produce the correct answer") {
+                    assertEquals(0, "turn off 499,499 through 500,500".answers.first)
                 }
             }
             on("testing part 2") {
                 it("should produce the correct answer") {
-                    assertEquals(34, "2x3x4".answers.second)
+                    assertEquals(1, "turn on 0,0 through 0,0".answers.second)
                 }
                 it("should produce the correct answer") {
-                    assertEquals(14, "1x1x10".answers.second)
+                    assertEquals(2000000, "toggle 0,0 through 999,999".answers.second)
                 }
             }
         }
     }
 
-    private val String.answers: Pair<Int, Int>
-        get() = CustomDay2(this).answers
+    private val String.answers: Pair<Int, Any>
+        get() = CustomDay6(this).answers
 
-    private class CustomDay2(val customData: String) : Day2() {
+    private class CustomDay6(val customData: String) : Day6() {
         override val data = this.customData
     }
 

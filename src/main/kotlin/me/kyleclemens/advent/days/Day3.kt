@@ -72,7 +72,7 @@ open class Day3 : Solution {
         // Make a new grid for Santa to move about in
         val grid = TwoDimensionalHouseGrid()
         // Loop through the instructions he got
-        grid.processMoves(this.getData().toCharArray())
+        grid.processMoves(this.data.toCharArray())
         // Since the grid only contains houses that have received presents, return the size of the grid
         return grid.houses.size
     }
@@ -83,7 +83,7 @@ open class Day3 : Solution {
         // Make a new grid for Robo-Santa
         val roboSantaGrid = TwoDimensionalHouseGrid()
         // Loop through the indexed instructions
-        for (item in this.getData().withIndex()) {
+        for (item in this.data.withIndex()) {
             if (item.index % 2 == 0) {
                 // If it's an even-indexed instruction, give it to Santa
                 santaGrid.processMove(item.value)

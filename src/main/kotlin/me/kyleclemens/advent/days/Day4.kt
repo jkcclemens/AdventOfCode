@@ -15,7 +15,7 @@ open class Day4 : Solution {
         // Make a string of zeroes equal to the length of num
         val goal = "0".repeat(num)
         // Get the key to append to
-        val key = this.getData().replace(Regex("\r?\n"), "")
+        val key = this.data.replace(Regex("\r?\n"), "")
         // Start at -1
         var i = -1
         while (true) {

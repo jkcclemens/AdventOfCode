@@ -45,11 +45,11 @@ open class Day5 : Solution {
     }
 
     private fun produceFirstAnswer(): Int {
-        return this.getData().split("\n").filterNot { it.isEmpty() }.count { it.isNiceFirstMethod() }
+        return this.data.split("\n").filterNot { it.isEmpty() }.count { it.isNiceFirstMethod() }
     }
 
     private fun produceSecondAnswer(): Int {
-        return this.getData().split("\n").filterNot { it.isEmpty() }.count { it.isNiceSecondMethod() }
+        return this.data.split("\n").filterNot { it.isEmpty() }.count { it.isNiceSecondMethod() }
     }
 
     override val answers: Pair<Int, Int>
