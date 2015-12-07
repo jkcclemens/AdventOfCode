@@ -15,7 +15,7 @@ open class Day3 : Solution {
          * The current coordinates in the correct format
          */
         val currentCoordinates: String
-            get() = "${currentX},$currentY"
+            get() = "$currentX,$currentY"
         /**
          * Current X position
          */
