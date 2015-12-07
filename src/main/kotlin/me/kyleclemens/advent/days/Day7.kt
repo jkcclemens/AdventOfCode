@@ -105,7 +105,7 @@ open class Day7 : Solution {
 
     private fun produceFirstAnswer(): Int {
         val bitwiseFun = BitwiseFun()
-        this.data.split("\n").filterNot { it.isEmpty() }.map { it.toOperation() }.forEach { bitwiseFun.addOperation(it) }
+        this.splitData.map { it.toOperation() }.forEach { bitwiseFun.addOperation(it) }
         bitwiseFun.processUntilEmpty()
         return bitwiseFun.wires["a"]!!
     }

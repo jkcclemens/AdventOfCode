@@ -17,7 +17,7 @@ open class Day2 : Solution {
 
     private fun getDimensions(): List<Dimensions> {
         // Get the data for this day, split it by lines, filter out empty lines, convert each line to a Dimensions
-        return this.data.split("\n").filterNot { it.isEmpty() }.map { it.toDimensions() }
+        return this.splitData.map { it.toDimensions() }
     }
 
     private fun produceFirstAnswer(): Int {

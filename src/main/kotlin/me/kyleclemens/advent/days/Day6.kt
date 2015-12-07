@@ -92,7 +92,7 @@ open class Day6 : Solution {
 
     private fun produceFirstAnswer(): Int {
         val grid = OnOffGrid()
-        this.data.split("\n").filterNot { it.isEmpty() }.map { it.toInstruction() }.forEach { grid.processInstruction(it) }
+        this.splitData.map { it.toInstruction() }.forEach { grid.processInstruction(it) }
         return grid.grid.sumBy { it.count { boolean -> boolean } }
     }
 
@@ -100,7 +100,7 @@ open class Day6 : Solution {
 
     private fun produceSecondAnswer(): Int {
         val grid = BrightnessGrid()
-        this.data.split("\n").filterNot { it.isEmpty() }.map { it.toInstruction() }.forEach { grid.processInstruction(it) }
+        this.splitData.map { it.toInstruction() }.forEach { grid.processInstruction(it) }
         return grid.grid.sumBy { it.sum() }
     }
 
