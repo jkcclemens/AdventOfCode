@@ -7,6 +7,7 @@ import me.kyleclemens.advent.days.Day4
 import me.kyleclemens.advent.days.Day5
 import me.kyleclemens.advent.days.Day6
 import me.kyleclemens.advent.days.Day7
+import me.kyleclemens.advent.days.Day8
 import me.kyleclemens.advent.helpers.Solution
 
 private fun timeDay(day: Int, solution: Solution) {
@@ -24,4 +25,5 @@ fun main(args: Array<String>) {
     timeDay(5, Day5())
     timeDay(6, Day6())
     timeDay(7, Day7())
+    timeDay(8, Day8())
 }
