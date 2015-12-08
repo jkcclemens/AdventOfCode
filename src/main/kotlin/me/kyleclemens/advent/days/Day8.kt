@@ -11,7 +11,7 @@ open class Day8 : Solution {
         val literals = this.splitData.map { it.length }.sum()
         val memory = this.splitData
             .map {
-                it.substring(1, it.length - 1).replace(Regex("\\\\([\"\\\\])"), "$1")
+                it.substring(1, it.length - 1).replace("\\\\", "\\").replace("\\\"", "\"")
             }
             .map { string ->
                 Regex("\\\\x([a-fA-F0-9]{2})").findAll(string)
