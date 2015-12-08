@@ -20,7 +20,8 @@ open class Day8 : Solution {
                     .map { it.value to Integer.parseInt(it.value, 16).toChar() }
                     .fold(string) { str, pair -> str.replace("\\x${pair.first}", pair.second.toString()) }
             }
-            .map { it.length }.sum()
+            .map { it.length }
+            .sum()
         return literals - memory
     }
 
