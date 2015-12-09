@@ -37,13 +37,9 @@ open class Day9 : Solution {
     }
 
 
-    private fun produceFirstAnswer(): Int {
-        return this.findAllDistances().min()!!
-    }
+    private fun produceFirstAnswer() = this.findAllDistances().min()!!
 
-    private fun produceSecondAnswer(): Int {
-        return this.findAllDistances().max()!!
-    }
+    private fun produceSecondAnswer() = this.findAllDistances().max()!!
 
     override val answers: Pair<Int, Int>
         get() = this.produceFirstAnswer() to this.produceSecondAnswer()
