@@ -52,7 +52,7 @@ class Day5Spec : MavenSpek() {
         }
     }
 
-    private val String.answers: Pair<Int, Any>
+    private val String.answers: Pair<Int, Int>
         get() = CustomDay5(this).answers
 
     private class CustomDay5(val customData: String) : Day5() {

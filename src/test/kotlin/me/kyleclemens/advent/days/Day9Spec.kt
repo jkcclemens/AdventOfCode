@@ -3,38 +3,33 @@ package me.kyleclemens.advent.days
 import me.kyleclemens.advent.MavenSpek
 import kotlin.test.assertEquals
 
-class Day8Spec : MavenSpek() {
+class Day9Spec : MavenSpek() {
     override fun test() {
-        given("a Day 8 solution") {
-            val solution = Day8()
+        given("a Day 9 solution") {
+            val solution = Day9()
             on("producing the answers") {
                 val answers = solution.answers
                 it("should have the correct first answer") {
-                    assertEquals(1333, answers.first)
+                    assertEquals(141, answers.first)
                 }
                 it("should have the correct second answer") {
-                    assertEquals(2046, answers.second)
+                    assertEquals(736, answers.second)
                 }
             }
         }
         given("examples") {
             on("testing part 1") {
                 it("should produce the correct answer") {
-                    assertEquals(12, "\"\"\n\"abc\"\n\"aaa\\\"aaa\"\n\"\\x27\"".answers.first)
-                }
-            }
-            on("testing part 2") {
-                it("should produce the correct answer") {
-                    assertEquals(19, "\"\"\n\"abc\"\n\"aaa\\\"aaa\"\n\"\\x27\"".answers.second)
+                    assertEquals(605, "London to Dublin = 464\nLondon to Belfast = 518\nDublin to Belfast = 141".answers.first)
                 }
             }
         }
     }
 
     private val String.answers: Pair<Int, Int>
-        get() = CustomDay8(this).answers
+        get() = CustomDay9(this).answers
 
-    private class CustomDay8(val customData: String) : Day8() {
+    private class CustomDay9(val customData: String) : Day9() {
         override val data = this.customData
     }
 

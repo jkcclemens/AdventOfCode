@@ -33,7 +33,7 @@ NOT y -> a""".answers.first)
         }
     }
 
-    private val String.answers: Pair<Int, Any>
+    private val String.answers: Pair<Int, Int>
         get() = CustomDay7(this).answers
 
     private class CustomDay7(val customData: String) : Day7() {
