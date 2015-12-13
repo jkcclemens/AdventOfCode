@@ -91,7 +91,6 @@ open class Day13 : Solution {
         return this.getPossibleHappiness().max()!!
     }
 
-    // FIXME: Does not produce the correct answer
     private fun produceSecondAnswer(): Int {
         // Convert existing data into a TableHappiness instance
         val table = this.splitData.asTableHappiness()
@@ -103,10 +102,8 @@ open class Day13 : Solution {
         }
         // Add a 0 happiness relationship with everyone for me
         table.relationships[me] = table.individuals.toMap({ it }, { 0 }).toLinkedMap()
-        // The question on Advent of Code is vague. Using a negative answer didn't say that it was too high or too low,
-        // so I assume that they want a positive answer. Either way, subtract the maximum possible happiness and the
-        // first answer.
-        return Math.abs(this.getPossibleHappiness(table).max()!! - this.produceFirstAnswer())
+        // Advent of Code needs to not be so confusing with wording. Like seriously. For real. I'm salty.
+        return this.getPossibleHappiness(table).max()!!
     }
 
     override val answers: Pair<Int, Int>

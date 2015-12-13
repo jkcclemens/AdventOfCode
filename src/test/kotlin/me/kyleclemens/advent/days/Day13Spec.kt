@@ -12,7 +12,9 @@ class Day13Spec : MavenSpek() {
                 it("should have the correct first answer") {
                     assertEquals(709, answers.first)
                 }
-                // FIXME: Second answer
+                it("should have the correct second answer") {
+                    assertEquals(668, answers.second)
+                }
             }
         }
         given("examples") {
