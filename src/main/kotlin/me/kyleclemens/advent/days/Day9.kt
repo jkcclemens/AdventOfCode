@@ -7,24 +7,25 @@ import me.kyleclemens.advent.helpers.UsesData
 open class Day9 : Solution {
 
     // Lifted from https://github.com/kotlin-projects/kotlin-euler
-    private fun <T : Any> List<T>.permutations(): Sequence<List<T>> = if (size == 1) sequenceOf(this) else {
-        val iterator = iterator()
-        var head = iterator.next()
-        var permutations = (this - head).permutations().iterator()
-        fun nextPermutation(): List<T>? = if (permutations.hasNext()) permutations.next() + head else {
-            if (iterator.hasNext()) {
-                head = iterator.next()
-                permutations = (this - head).permutations().iterator()
-                nextPermutation()
-            } else null
+    private val <T : Any> List<T>.permutations: Sequence<List<T>>
+        get() = if (size == 1) sequenceOf(this) else {
+            val iterator = iterator()
+            var head = iterator.next()
+            var permutations = (this - head).permutations.iterator()
+            fun nextPermutation(): List<T>? = if (permutations.hasNext()) permutations.next() + head else {
+                if (iterator.hasNext()) {
+                    head = iterator.next()
+                    permutations = (this - head).permutations.iterator()
+                    nextPermutation()
+                } else null
+            }
+            sequence { nextPermutation() }
         }
-        sequence { nextPermutation() }
-    }
 
     private fun findAllDistances(): List<Int> {
         val distances = this.splitData.toMap({ it.split(" = ")[0].split(" to ").toSet() }, { it.split(" = ")[1].toInt() })
         val destinations = this.splitData.flatMap { it.split(" = ")[0].split(" to ") }.distinct()
-        return destinations.permutations()
+        return destinations.permutations
             .map {
                 it
                     .mapIndexed { i, s ->
