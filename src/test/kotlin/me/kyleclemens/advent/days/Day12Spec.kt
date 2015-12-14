@@ -10,10 +10,10 @@ class Day12Spec : MavenSpek() {
             on("producing the answers") {
                 val answers = solution.answers
                 it("should have the correct first answer") {
-                    //                    assertEquals("cqjxxyzz", answers.first)
+                    assertEquals(119433, answers.first)
                 }
                 it("should have the correct second answer") {
-                    //                    assertEquals("cqkaabcc", answers.second)
+                    assertEquals(68466, answers.second)
                 }
             }
         }
