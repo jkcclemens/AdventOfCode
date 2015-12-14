@@ -13,7 +13,7 @@ class Day14Spec : MavenSpek() {
                     assertEquals(2660, answers.first)
                 }
                 it("should have the correct second answer") {
-                    //                    assertEquals(668, answers.second)
+                    assertEquals(1256, answers.second)
                 }
             }
         }
