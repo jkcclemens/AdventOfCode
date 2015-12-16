@@ -22,24 +22,9 @@ class Day16 : Solution {
         "perfumes" to 1
     ))
 
-    private val defaultMap = mapOf(
-        "number" to -1,
-        "children" to -1,
-        "cats" to -1,
-        "samoyeds" to -1,
-        "pomeranians" to -1,
-        "akitas" to -1,
-        "vizslas" to -1,
-        "goldfish" to -1,
-        "trees" to -1,
-        "cars" to -1,
-        "perfumes" to -1
-    )
-
     private fun String.toSue(): Sue {
         val (name, data) = this.split(": ", limit = 2)
-        val sue = (this@Day16.defaultMap + data.split(", ").toMap({ it.split(": ")[0] }, { it.split(": ")[1].toInt() })).toLinkedMap()
-        sue["number"] = name.split(" ")[1].toInt()
+        val sue = data.split(", ").toMap({ it.split(": ")[0] }, { it.split(": ")[1].toInt() }) + ("number" to name.split(" ")[1].toInt())
         return Sue(sue)
     }
 
@@ -48,7 +33,7 @@ class Day16 : Solution {
 
     private fun produceFirstAnswer(): Int {
         val sue = this.allSues
-            .map { it.map.filter { entry -> entry.value > -1 } }
+            .map { it.map }
             .filter { it.all { entry -> entry.key == "number" || this.targetSue.map[entry.key] == entry.value } }
             .single()
         return sue["number"]!!
@@ -56,7 +41,7 @@ class Day16 : Solution {
 
     private fun produceSecondAnswer(): Int {
         val sue = this.allSues
-            .map { it.map.filter { entry -> entry.value > -1 } }
+            .map { it.map }
             .filter {
                 it.all { entry ->
                     if (entry.value < 0) return@all true
