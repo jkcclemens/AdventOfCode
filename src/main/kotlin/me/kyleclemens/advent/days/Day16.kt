@@ -45,7 +45,6 @@ class Day16 : Solution {
         val sue = this.allSues
             .filter {
                 it.map.all { entry ->
-                    if (entry.value < 0) return@all true
                     when (entry.key) {
                         "number" -> true
                         "cats", "trees" -> this.targetSue.map[entry.key]!! < entry.value
