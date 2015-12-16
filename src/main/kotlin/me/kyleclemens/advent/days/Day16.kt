@@ -2,11 +2,14 @@ package me.kyleclemens.advent.days
 
 import me.kyleclemens.advent.helpers.Solution
 import me.kyleclemens.advent.helpers.UsesData
+import kotlin.properties.getValue
 
 @UsesData(day = 16)
 class Day16 : Solution {
 
-    private class Sue(val map: Map<String, Int>)
+    private class Sue(val map: Map<String, Int>) {
+        val number: Int by this.map
+    }
 
     private val targetSue = Sue(mapOf(
         "number" to -1,
@@ -33,17 +36,15 @@ class Day16 : Solution {
 
     private fun produceFirstAnswer(): Int {
         val sue = this.allSues
-            .map { it.map }
-            .filter { it.all { entry -> entry.key == "number" || this.targetSue.map[entry.key] == entry.value } }
+            .filter { it.map.all { entry -> entry.key == "number" || this.targetSue.map[entry.key] == entry.value } }
             .single()
-        return sue["number"]!!
+        return sue.number
     }
 
     private fun produceSecondAnswer(): Int {
         val sue = this.allSues
-            .map { it.map }
             .filter {
-                it.all { entry ->
+                it.map.all { entry ->
                     if (entry.value < 0) return@all true
                     when (entry.key) {
                         "number" -> true
@@ -54,7 +55,7 @@ class Day16 : Solution {
                 }
             }
             .single()
-        return sue["number"]!!
+        return sue.number
     }
 
     override val answers: Pair<Int, Int>
