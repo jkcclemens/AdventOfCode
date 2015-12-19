@@ -2,6 +2,7 @@ package me.kyleclemens.advent.days
 
 import me.kyleclemens.advent.helpers.Solution
 import me.kyleclemens.advent.helpers.UsesData
+import me.kyleclemens.advent.helpers.permutations
 
 @UsesData(day = 13)
 open class Day13 : Solution {
@@ -48,22 +49,6 @@ open class Day13 : Solution {
         // Return the resulting table
         return table
     }
-
-    // Lifted from https://github.com/kotlin-projects/kotlin-euler
-    private val <T : Any> List<T>.permutations: Sequence<List<T>>
-        get() = if (size == 1) sequenceOf(this) else {
-            val iterator = iterator()
-            var head = iterator.next()
-            var permutations = (this - head).permutations.iterator()
-            fun nextPermutation(): List<T>? = if (permutations.hasNext()) permutations.next() + head else {
-                if (iterator.hasNext()) {
-                    head = iterator.next()
-                    permutations = (this - head).permutations.iterator()
-                    nextPermutation()
-                } else null
-            }
-            sequence { nextPermutation() }
-        }
 
     private fun getPossibleHappiness(table: TableHappiness = this.splitData.asTableHappiness()): Sequence<Int> {
         // Generate the permutations for the seating arrangements
