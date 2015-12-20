@@ -12,6 +12,7 @@ import me.kyleclemens.advent.days.Day17
 import me.kyleclemens.advent.days.Day18
 import me.kyleclemens.advent.days.Day19
 import me.kyleclemens.advent.days.Day2
+import me.kyleclemens.advent.days.Day20
 import me.kyleclemens.advent.days.Day3
 import me.kyleclemens.advent.days.Day4
 import me.kyleclemens.advent.days.Day5
@@ -48,4 +49,5 @@ fun main(args: Array<String>) {
     timeDay(17, Day17())
     timeDay(18, Day18())
     timeDay(19, Day19())
+    timeDay(20, Day20())
 }
