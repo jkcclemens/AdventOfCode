@@ -10,7 +10,7 @@ open class Day9 : Solution {
     private fun findAllDistances(): List<Int> {
         // Make a map of distances from the input. The map has a set paired to an int, since London to Dublin is the
         // same distance as Dublin to London.
-        val distances = this.splitData.toMap({ it.split(" = ")[0].split(" to ").toSet() }, { it.split(" = ")[1].toInt() })
+        val distances = this.splitData.toMapBy({ it.split(" = ")[0].split(" to ").toSet() }, { it.split(" = ")[1].toInt() })
         // Make a list of possible destinations
         val destinations = this.splitData.flatMap { it.split(" = ")[0].split(" to ") }.distinct()
         return destinations.permutations

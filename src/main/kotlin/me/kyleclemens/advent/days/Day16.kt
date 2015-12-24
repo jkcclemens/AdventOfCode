@@ -2,7 +2,6 @@ package me.kyleclemens.advent.days
 
 import me.kyleclemens.advent.helpers.Solution
 import me.kyleclemens.advent.helpers.UsesData
-import kotlin.properties.getValue
 
 @UsesData(day = 16)
 class Day16 : Solution {
@@ -27,7 +26,7 @@ class Day16 : Solution {
 
     private fun String.toSue(): Sue {
         val (name, data) = this.split(": ", limit = 2)
-        val sue = data.split(", ").toMap({ it.split(": ")[0] }, { it.split(": ")[1].toInt() }) + ("number" to name.split(" ")[1].toInt())
+        val sue = data.split(", ").toMapBy({ it.split(": ")[0] }, { it.split(": ")[1].toInt() }) + ("number" to name.split(" ")[1].toInt())
         return Sue(sue)
     }
 

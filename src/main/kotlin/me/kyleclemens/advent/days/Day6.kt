@@ -2,7 +2,6 @@ package me.kyleclemens.advent.days
 
 import me.kyleclemens.advent.helpers.Solution
 import me.kyleclemens.advent.helpers.UsesData
-import kotlin.text.Regex
 
 @UsesData(day = 6)
 open class Day6 : Solution {

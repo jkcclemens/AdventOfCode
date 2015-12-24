@@ -86,7 +86,7 @@ open class Day13 : Solution {
             table.relationships[it]!![me] = 0
         }
         // Add a 0 happiness relationship with everyone for me
-        table.relationships[me] = table.individuals.toMap({ it }, { 0 }).toLinkedMap()
+        table.relationships[me] = table.individuals.toMapBy({ it }, { 0 }).toLinkedMap()
         // Advent of Code needs to not be so confusing with wording. Like seriously. For real. I'm salty.
         return this.getPossibleHappiness(table).max()!!
     }
